@@ -48,7 +48,7 @@
                         <li><a class="nav-link" href="#f-santa">Find Santa</a></li>
 						<li><a class="nav-link" href="#donate">Donate</a></li>
                         <li><a class="nav-link" href="#testi">Testimonial</a></li>
-						<li><a class="nav-link" href="#contact">Contact</a></li>
+						<li><a class="nav-link" href="#wishlist">Wish List</a></li>
                     </ul>
                 </div>
             </div>
@@ -135,57 +135,35 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-lg-4 col-sm-4">
+				<div class="col-lg-3 col-sm-3">
 					<figure class="effect-service">
-						<img src="images/card_back.png" alt="" />
-						<figcaption>
+						<img src="images/card_back.png" alt="" id="card1"/>
+						<figcaption onclick="flip(1)">
+							<h2>Flip</h2>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-lg-3 col-sm-3">
+					<figure class="effect-service">
+						<img src="images/card_back.png" alt="" id="card2"/>
+						<figcaption  onclick="flip(2)">
+							<h2>Flip</h2>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-lg-3 col-sm-3">
+					<figure class="effect-service">
+						<img src="images/card_back.png" alt="" id="card3"/>
+						<figcaption onclick="flip(3)">
 							<h2>Flip</h2>
 							<a href="#">View more</a>
 						</figcaption>
 					</figure>
 				</div>
-				<div class="col-lg-4 col-sm-4">
+				<div class="col-lg-3 col-sm-3">
 					<figure class="effect-service">
-						<img src="images/card_back.png" alt="" />
-						<figcaption>
-							<h2>Flip</h2>
-							<a href="#">View more</a>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-lg-4 col-sm-4">
-					<figure class="effect-service">
-						<img src="images/card_back.png" alt="" />
-						<figcaption>
-							<h2>Flip</h2>
-							<a href="#">View more</a>
-						</figcaption>
-					</figure>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-sm-4">
-					<figure class="effect-service">
-						<img src="images/card_back.png" alt="" />
-						<figcaption>
-							<h2>Flip</h2>
-							<a href="#">View more</a>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-lg-4 col-sm-4">
-					<figure class="effect-service">
-						<img src="images/card_back.png" alt="" />
-						<figcaption>
-							<h2>Flip</h2>
-							<a href="#">View more</a>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-lg-4 col-sm-4">
-					<figure class="effect-service">
-						<img src="images/card_back.png" alt="" />
-						<figcaption>
+						<img src="images/card_back.png" alt="" id="card4"/>
+						<figcaption onclick="flip(4)">
 							<h2>Flip</h2>
 							<a href="#">View more</a>
 						</figcaption>
@@ -193,9 +171,48 @@
 				</div>
 			</div>
 			
+			<div class="row">
+				<div class="col-lg-3 col-sm-3">
+					<figure class="effect-service">
+						<img src="images/card_back.png" alt="" id="card5"/>
+						<figcaption onclick="flip(5)">
+							<h2>Flip</h2>
+							<a href="#">View more</a>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-lg-3 col-sm-3">
+					<figure class="effect-service">
+						<img src="images/card_back.png" alt="" id="card6"/>
+						<figcaption onclick="flip(6)">
+							<h2>Flip</h2>
+							<a href="#">View more</a>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-lg-3 col-sm-3">
+					<figure class="effect-service">
+						<img src="images/card_back.png" alt="" id="card7"/>
+						<figcaption onclick="flip(7)">
+							<h2>Flip</h2>
+							<a href="#">View more</a>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-lg-3 col-sm-3">
+					<figure class="effect-service">
+						<img src="images/card_back.png" alt="" id="card8" onclick=""/>
+						<figcaption onclick="flip(8)">
+							<h2>Flip</h2>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+			<div class="submit-button text-center">
+				<button class="btn btn-common" id="retry" onclick="reset">Play Again</button>
+			</div>	
 		</div>
-
-
+	</div>
 	<div id="donate" class="gallery-box" style="background: #f7f7f7;"> 
 		<div class="container">
 			<div class="row">
@@ -306,12 +323,12 @@
 	</div>
 
 
-	<div id="contact" class="contact-box" style="background: #f7f7f7;">
+	<div id="wishlist" class="contact-box" style="background: #f7f7f7;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Contact Santa</h2>
+						<h2>Send Your Wishlist</h2>
 					</div>
 				</div>
 			</div>
@@ -323,19 +340,18 @@
 					  <div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name" required>
 								<div class="help-block with-errors"></div>
 							</div>                                 
 						</div>
 						<div class="col-md-12">
 							<div class="form-group"> 
-								<textarea class="form-control" id="message" placeholder="Your Wish List" rows="8" data-error="Write your message" required></textarea>
+								<textarea class="form-control" id="message" placeholder="Your Wish List" rows="8" data-error="You need to enter your wishlist!" required></textarea>
 								<div class="help-block with-errors"></div>
 							</div>
 							<div class="submit-button text-center">
 								<button class="btn btn-common" id="submit" type="submit">Send Message</button>
-								<div id="msgSubmit" class="h3 text-center hidden"></div> 
-								<div class="clearfix"></div> 
+								
 							</div>
 						</div>
 					  </div>            
@@ -352,7 +368,7 @@
 							</div>
 							<div class="media-body dit-right">
 								<h4>Address</h4>
-								<p>Fleming 196 Woodside Circle Mobile, FL 36602</p>
+								<p>1 Elf Road, North Pole</p>
 							</div>
 						</div>
 						<div class="media cont-line">
@@ -361,8 +377,7 @@
 							</div>
 							<div class="media-body dit-right">
 								<h4>Email</h4>
-								<a href="#">demoinfo@gmail.com</a><br>
-								<a href="#">demoinfo@gmail.com</a>
+								<a href="#">santaclaus@gmail.com</a>
 							</div>
 						</div>
 						<div class="media cont-line">
@@ -371,8 +386,7 @@
 							</div>
 							<div class="media-body dit-right">
 								<h4>Phone Number</h4>
-								<a href="#">12345 67890</a><br>
-								<a href="#">12345 67890</a>
+								<a href="#">605-313-4000</a>
 							</div>
 						</div>
 					</div>
@@ -401,7 +415,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-    
+    <script src="js/fsanta.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script> 
 	<script src="js/slider-index.js"></script>
