@@ -9,15 +9,25 @@ const randomImage = new Array();
     randomImage[6] = "images/card_sman.png"; 
     randomImage[7] = "images/card_sman.png"; 
 
-const messageLose = new Array();  
+const lettersLose = new Array();  
       
-    messageLose[0] = "images/y.png";  
-    messageLose[1] = "images/o.png"; 
-    messageLose[2] = "images/u.png"; 
-    messageLose[3] = "images/l.png"; 
-    messageLose[4] = "images/o.png"; 
-    messageLose[5] = "images/s.png"; 
-    messageLose[6] = "images/e.png";  
+    lettersLose[0] = "images/card_y.png";  
+    lettersLose[1] = "images/card_o.png"; 
+    lettersLose[2] = "images/card_u.png"; 
+    lettersLose[3] = "images/card_l.png"; 
+    lettersLose[4] = "images/card_o.png"; 
+    lettersLose[5] = "images/card_s.png"; 
+    lettersLose[6] = "images/card_e_loss.png";  
+
+const lettersWin = new Array();  
+      
+    lettersLose[0] = "images/card_w.png";  
+    lettersLose[1] = "images/card_i.png"; 
+    lettersLose[2] = "images/card_n.png"; 
+    lettersLose[3] = "images/card_n.png"; 
+    lettersLose[4] = "images/card_e_win.png"; 
+    lettersLose[5] = "images/card_r.png"; 
+    lettersLose[6] = "images/card_e_loss.png";  
 
 var attempts = 0;
 
@@ -34,22 +44,28 @@ function flip(num)
     if (document.getElementById("card"+num).src.endsWith("card_back.png")){
         document.getElementById("card"+num).src = randomImage[randomNum] ;
     }
-    randomImage[randomNum] = "";
+    
     
     attempts++;
     
-    if (attempts == 8)
+    if (attempts == 8 && randomImage[randomNum].endsWith("card_santa.png"))
     {
-        var letterCount = 0;
+        messageLose()
+    } 
+    randomImage[randomNum] = "";
+}
+
+function messageLose()
+{
+    var letterCount = 0;
         for (let i = 1; i < 9; i++) 
         {   
             if (!document.getElementById("card"+i).src.endsWith("card_santa.png"))
             {
-                document.getElementById("card"+i).src = messageLose[letterCount]
+                document.getElementById("card"+i).src = lettersLose[letterCount]
+                letterCount++;
             }
-            letterCount++;
         }
-    } 
 }
 
 function reset()
@@ -66,4 +82,5 @@ function reset()
     randomImage[5] = "images/card_gman.png"; 
     randomImage[6] = "images/card_sman.png"; 
     randomImage[7] = "images/card_sman.png"; 
+    attempts = 0;
 }
