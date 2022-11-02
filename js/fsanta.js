@@ -21,13 +21,13 @@ const lettersLose = new Array();
 
 const lettersWin = new Array();  
       
-    lettersLose[0] = "images/card_w.png";  
-    lettersLose[1] = "images/card_i.png"; 
-    lettersLose[2] = "images/card_n.png"; 
-    lettersLose[3] = "images/card_n.png"; 
-    lettersLose[4] = "images/card_e_win.png"; 
-    lettersLose[5] = "images/card_r.png"; 
-    lettersLose[6] = "images/card_e_loss.png";  
+    lettersWin[0] = "images/card_w.png";  
+    lettersWin[1] = "images/card_i.png"; 
+    lettersWin[2] = "images/card_n.png"; 
+    lettersWin[3] = "images/card_n.png"; 
+    lettersWin[4] = "images/card_e_win.png"; 
+    lettersWin[5] = "images/card_r.png"; 
+    lettersWin[6] = "images/card_trophy.png";  
 
 var attempts = 0;
 
@@ -43,6 +43,7 @@ function flip(num)
     }    
     if (document.getElementById("card"+num).src.endsWith("card_back.png")){
         document.getElementById("card"+num).src = randomImage[randomNum] ;
+        document.getElementById("card"+num+"_message").hidden = true;
     }
     
     
@@ -50,9 +51,27 @@ function flip(num)
     
     if (attempts == 8 && randomImage[randomNum].endsWith("card_santa.png"))
     {
-        messageLose()
+        messageLose();
     } 
+    else if (randomImage[randomNum].endsWith("card_santa.png"))
+    {
+        messageWin();
+    }
     randomImage[randomNum] = "";
+}
+
+function messageWin()
+{
+    var letterCount = 0;
+        for (let i = 1; i < 9; i++) 
+        {   
+            if (!document.getElementById("card"+i).src.endsWith("card_santa.png"))
+            {
+                document.getElementById("card"+i).src = lettersWin[letterCount];
+                document.getElementById("card"+i+"_message").hidden = true;
+                letterCount++;
+            }
+        }
 }
 
 function messageLose()
@@ -62,7 +81,8 @@ function messageLose()
         {   
             if (!document.getElementById("card"+i).src.endsWith("card_santa.png"))
             {
-                document.getElementById("card"+i).src = lettersLose[letterCount]
+                document.getElementById("card"+i).src = lettersLose[letterCount];
+                document.getElementById("card"+i+"_message").hidden = true;
                 letterCount++;
             }
         }
@@ -73,6 +93,7 @@ function reset()
     for (let i = 1; i < 9; i++) 
     {
         document.getElementById("card"+i).src = "images/card_back.png";
+        document.getElementById("card"+i+"_message").hidden = false;
     }
     randomImage[0] = "images/card_santa.png";  
     randomImage[1] = "images/card_gman.png"; 
