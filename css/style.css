@@ -42,6 +42,11 @@ a {
     transition: all .3s ease-in-out;
 }
 
+@font-face {
+    font-family: 'SnowyChristmas';
+    src: url("/fonts/SnowyChristmas.otf");
+}
+
 h1,
 h2,
 h3,
@@ -1311,7 +1316,7 @@ select.form-control:not([size]):not([multiple]){
 
 .footer-box {
     background: #ccc;
-    padding: 20px 0;\
+    padding: 20px 0;
 }
 
 .footer-box .footer-company-name {

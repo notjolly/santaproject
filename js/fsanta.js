@@ -44,20 +44,18 @@ function flip(num)
     if (document.getElementById("card"+num).src.endsWith("card_back.png")){
         document.getElementById("card"+num).src = randomImage[randomNum] ;
         document.getElementById("card"+num+"_message").hidden = true;
+        attempts++;
+        
+        if (attempts == 8 && randomImage[randomNum].endsWith("card_santa.png"))
+        {
+            messageLose();
+        } 
+        else if (randomImage[randomNum].endsWith("card_santa.png"))
+        {
+            messageWin();
+        }
+        randomImage[randomNum] = "";
     }
-    
-    
-    attempts++;
-    
-    if (attempts == 8 && randomImage[randomNum].endsWith("card_santa.png"))
-    {
-        messageLose();
-    } 
-    else if (randomImage[randomNum].endsWith("card_santa.png"))
-    {
-        messageWin();
-    }
-    randomImage[randomNum] = "";
 }
 
 function messageWin()
