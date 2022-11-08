@@ -105,6 +105,12 @@
 	.gallery-box ul li {
 		width: 48%;
 	}
+	.container {
+		width: 48%;
+	}
+	#cards {
+		width: 48%;
+	}
 	.top-header{
 		position: relative;
 	}
@@ -141,7 +147,8 @@
 		margin-bottom: 5px;
 	}
 	.navbar-brand img {
-        width: 220px;
+        width: 50%;
+		height: 50%;
     }
 
 
