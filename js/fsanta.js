@@ -43,7 +43,6 @@ function flip(num)
     }    
     if (document.getElementById("card"+num).src.endsWith("card_back.png")){
         document.getElementById("card"+num).src = randomImage[randomNum] ;
-        document.getElementById("card"+num+"_message").hidden = true;
         attempts++;
         
         if (attempts == 8 && randomImage[randomNum].endsWith("card_santa.png"))
@@ -66,7 +65,6 @@ function messageWin()
             if (!document.getElementById("card"+i).src.endsWith("card_santa.png"))
             {
                 document.getElementById("card"+i).src = lettersWin[letterCount];
-                document.getElementById("card"+i+"_message").hidden = true;
                 letterCount++;
             }
         }
@@ -80,7 +78,6 @@ function messageLose()
             if (!document.getElementById("card"+i).src.endsWith("card_santa.png"))
             {
                 document.getElementById("card"+i).src = lettersLose[letterCount];
-                document.getElementById("card"+i+"_message").hidden = true;
                 letterCount++;
             }
         }
@@ -91,7 +88,6 @@ function reset()
     for (let i = 1; i < 9; i++) 
     {
         document.getElementById("card"+i).src = "images/card_back.png";
-        document.getElementById("card"+i+"_message").hidden = false;
     }
     randomImage[0] = "images/card_santa.png";  
     randomImage[1] = "images/card_gman.png"; 
