@@ -56,6 +56,7 @@
 	.navbar-brand{
 		margin-left: 10px;
 		margin-right: 10px;
+		width: 48%;
 	}
 	.top-header .navbar .navbar-collapse ul li a{
 		padding: 5px 15px;
@@ -107,6 +108,9 @@
 	}
 	.container {
 		width: 48%;
+	}
+	#team_img {
+		border:1%
 	}
 	#cards {
 		width: 48%;
